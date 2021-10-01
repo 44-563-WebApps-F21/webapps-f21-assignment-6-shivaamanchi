@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Pass Phrase</title>
+ </head>
+<body>
+
+<h2>Pass phrase by Shiva Kumar Amanchi</h2>
+
+<from>
+    <label for="form_secret">Enter the secret phrase</label>
+    <input type="password" value="Let me in" id="form_secret"><br><br>
+
+    <label for="from_phrase">Enter a phrase</label>
+    <input type="text" id="from_phrase"><br><br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</from>
+
+
+<p id="result">correct: 0 wrong: 0</p>
+    <script>
+        correct = 0
+        wrong = 0
+        function processPhrase() {
+            console.log("Getting form values")
+            secret = document.getElementById("form_secret").value
+            phrase = document.getElementById("from_phrase").value
+            out = document.getElementById("result")
+            if (secret == phrase) {
+                correct = correct + 1
+                alert("Access allowed")
+            }
+            else {
+                wrong = wrong + 1
+                alert("Access denied")
+            }
+            out.innerHTML = "correct: " + correct + "  wrong: " + wrong;
+
+        }
+    </script>
+</body>
+</html> 
