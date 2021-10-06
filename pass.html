@@ -8,36 +8,58 @@
 <h2>Pass phrase by Shiva Kumar Amanchi</h2>
 
 <from>
-    <label for="form_secret">Enter the secret phrase</label>
-    <input type="password" value="Let me in" id="form_secret"><br><br>
+    <label for="secretphase">Enter the secret phrase</label>
+    <input type="password" id="secretphase" value="Shivakumar" ><br>
 
     <label for="from_phrase">Enter a phrase</label>
-    <input type="text" id="from_phrase"><br><br>
+    <input type="text" id="phrase" autofocus><br>
 
-    <input type="button" onclick="processPhrase()" value="Check the phrase">
+    <input type="button" onclick="processPhrase()" value="Check the phrase"/>
 </from>
 
+<div id="result"></div>
+<br><br>
+<div class="container">
+    <img src= "images/caiman.jpg" id="caiman" alt="Caiman" height="200" width="200" onclick="newImage()">
+</div>
 
-<p id="result">correct: 0 wrong: 0</p>
-    <script>
-        correct = 0
-        wrong = 0
-        function processPhrase() {
-            console.log("Getting form values")
-            secret = document.getElementById("form_secret").value
-            phrase = document.getElementById("from_phrase").value
-            out = document.getElementById("result")
-            if (secret == phrase) {
-                correct = correct + 1
-                alert("Access allowed")
-            }
-            else {
-                wrong = wrong + 1
-                alert("Access denied")
-            }
-            out.innerHTML = "correct: " + correct + "  wrong: " + wrong;
+<script> 
 
+var correct=0;
+var wrong=0;
+
+function processPhrase (){
+    spValue = document.getElementById("secretphase").value
+
+    phraseValue = document.getElementById("phrase").value
+
+    resultDiv = document.getElementById("result")
+    if(spValue==phraseValue){
+        alert("Access allowed");
+
+    correct=correct+1;
+    }
+     else{
+        alert("Access denied");
+        wrong=wrong+1;
+    }  
+    resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
+}
+var usingImage=1;
+    function newImage(){
+        Image=document.getElementById("caiman")
+        switch(usingImage){
+            case 1 : Image.src = "images/Abyssinian.jpg"
+                     usingImage =usingImage +1;
+                     break;
+            case 2 : Image.src = "images/caiman.jpg"
+                     usingImage =usingImage +1;
+                     break; 
+            case 3 : Image.src = "images/Monkey.jpg"
+                     usingImage =usingImage +1;
+                     break;
         }
-    </script>
+    }
+</script>
 </body>
-</html> 
+</html>
