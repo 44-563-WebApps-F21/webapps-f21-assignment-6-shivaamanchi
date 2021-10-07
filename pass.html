@@ -22,7 +22,6 @@
 <div class="container">
     <img src= "images/caiman.jpg" id="caiman" alt="Caiman" height="200" width="200" onclick="newImage()">
 </div>
-
 <script> 
 
 var correct=0;
@@ -33,17 +32,28 @@ function processPhrase (){
 
     phraseValue = document.getElementById("phrase").value
 
-    resultDiv = document.getElementById("result")
-    if(spValue==phraseValue){
-        alert("Access allowed");
-
-    correct=correct+1;
+    if(spValue==phraseValue )
+    {
+        
+        alert("Access allowed")
+        correct=correct+1;
     }
-     else{
-        alert("Access denied");
-        wrong=wrong+1;
-    }  
-    resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
+    else{
+        wrong++;
+        alert("Access denied")
+        if(wrong>=3)
+        {
+            accountLocked()
+        }
+    }
+    out = document.getElementById("result")
+    
+        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong  
+    
+}
+function accountLocked()
+{
+    alert("Account Locked")
 }
 var usingImage=1;
     function newImage(){

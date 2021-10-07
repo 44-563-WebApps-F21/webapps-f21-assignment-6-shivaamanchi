@@ -39,61 +39,61 @@
 
 <script> 
 
-    function powers(){
-       
-        let result= " "
-        console.log("Getting form values")
-         baseValue = document.getElementById("base").value
-         expoValue = document.getElementById("expo").value
-         resultDiv = document.getElementById("result")
-       
-        for(i=1;i<=expoValue;i++){
-            result =result+ Math.pow(baseValue,i)+ " "
-            resultDiv.innerHTML="powers of base are: "+ result
-                
-        }
-    }
-    function processRadio(){
-        base_value = document.getElementById("base").value
-        expo_value = document.getElementById("expo").value
-        arithmetic_value =document.getElementsByName("arithmetic")
-        result_value=document.getElementById("radio_result")
-      
-        for(i = 0; i < arithmetic_value.length; i++) {
-            if(arithmetic_value[i].checked){
-                console.log(arithmetic_value[i].value)
-                if(arithmetic_value[i].value=="plus"){
-                    let add = parseFloat(base_value)+parseFloat(expo_value)
-                    result_value.innerHTML = "Result for " + base_value + " + " + expo_value + " is " + add
-                }
-                else if(arithmetic_value[i].value=="minus"){
-                    let sub = base_value-expo_value
-                    result_value.innerHTML = "Result for " + base_value + " - " + expo_value + " is " + sub
-                }
-                else if(arithmetic_value[i].value=="times"){
-                    let mul = base_value*expo_value
-                    result_value.innerHTML = "Result for " + base_value + " * " + expo_value + " is " + mul
-                }
-                else if(arithmetic_value[i].value=="divide"){
-                    let div = base_value/expo_value
-                    result_value.innerHTML = "Result for " + base_value + " / " + expo_value + " is " + div
-                }
-            }
-     }
-    }
-    function processRadio(){
-        base_value = document.getElementById("base").value
-        expo_value = document.getElementById("expo").value
-        arithmetic_value =document.getElementsByName("arithmetic")
-        result_value=document.getElementById("radio_result")
-    }
+function powers(){
+   
+    let result= " "
+    console.log("Getting form values")
+     baseValue = document.getElementById("base").value
+     expoValue = document.getElementById("expo").value
+     resultDiv = document.getElementById("result")
+   
     for(i=1;i<=expoValue;i++){
-            result =result+ Math.pow(baseValue,i)+ " "
-            resultDiv.innerHTML="powers of base are: "+ result
-                
+        result =result+ Math.pow(baseValue,i)+ " "
+        resultDiv.innerHTML="powers of base are: "+ result
+            
+    }
+}
+
+function processRadio(){
+    base_value = document.getElementById("base").value
+    expo_value = document.getElementById("expo").value
+    arithmetic_value =document.getElementsByName("arithmetic")
+    result_value=document.getElementById("radio_result")
+}
+for(i=1;i<=expoValue;i++){
+        result =result+ Math.pow(baseValue,i)+ " "
+        resultDiv.innerHTML="powers of base are: "+ result
+            
+    }
+ function processRadio(){
+    base_value = document.getElementById("base").value
+    expo_value = document.getElementById("expo").value
+    arithmetic_value =document.getElementsByName("arithmetic")
+    result_value=document.getElementById("radio_result")
+  
+    for(i = 0; i < arithmetic_value.length; i++) {
+        if(arithmetic_value[i].checked){
+            console.log(arithmetic_value[i].value)
+            if(arithmetic_value[i].value=="plus"){
+                let add = parseFloat(base_value)+parseFloat(expo_value)
+                result_value.innerHTML = "Result for " + base_value + " + " + expo_value + " is " + add
+            }
+            else if(arithmetic_value[i].value=="minus"){
+                let sub = base_value-expo_value
+                result_value.innerHTML = "Result for " + base_value + " - " + expo_value + " is " + sub
+            }
+            else if(arithmetic_value[i].value=="times"){
+                let mul = base_value*expo_value
+                result_value.innerHTML = "Result for " + base_value + " * " + expo_value + " is " + mul
+            }
+            else if(arithmetic_value[i].value=="divide"){
+                let div = base_value/expo_value
+                result_value.innerHTML = "Result for " + base_value + " / " + expo_value + " is " + div
+            }
         }
-     
-    </script>
+ }
+}
+</script>
 
 </body>
 </html>
