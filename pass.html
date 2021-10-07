@@ -5,7 +5,7 @@
  </head>
 <body>
 
-<h2>Pass phrase by Shiva Kumar Amanchi</h2>
+<h2 style="color:blueviolet;">Pass phrase by Shiva Kumar Amanchi</h2>
 
 <from>
     <label for="secretphase">Enter the secret phrase</label>
@@ -28,33 +28,36 @@ var correct=0;
 var wrong=0;
 
 function processPhrase (){
+    console.log("Getting form values")
     spValue = document.getElementById("secretphase").value
 
     phraseValue = document.getElementById("phrase").value
+    out = document.getElementById("result")
 
     if(spValue==phraseValue )
     {
-        
+        correct++;
         alert("Access allowed")
-        correct=correct+1;
+        
+        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong
     }
     else{
-        wrong++;
+        wrong++;       
         alert("Access denied")
-        if(wrong>=3)
-        {
-            accountLocked()
-        }
+        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong
     }
-    out = document.getElementById("result")
+        
+        if(wrong>2)
+        {
+            alert("Account Locked");
+        }
     
-        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong  
+    
+    
+         
     
 }
-function accountLocked()
-{
-    alert("Account Locked")
-}
+
 var usingImage=1;
     function newImage(){
         Image=document.getElementById("caiman")
